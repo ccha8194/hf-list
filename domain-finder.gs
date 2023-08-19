@@ -1,7 +1,7 @@
 function extractDomainsWithRateLimit() {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet()
   var companyNames = sheet.getRange("A2:A" + sheet.getLastRow()).getValues()
-  var apiKey = "sk_0a505e9c4b1e49d5b945c296cb403704"
+  var apiKey = "" // api key goes here
   var requestsPerSecond = 10
   var millisecondsPerRequest = 1000 / requestsPerSecond
   
@@ -11,8 +11,8 @@ function extractDomainsWithRateLimit() {
       "headers": {
         "Authorization": "Bearer " + apiKey
       },
-      "muteHttpExceptions": true // prevents termination from errors
-    });
+      "muteHttpExceptions": true // prevents termination from the possible errors
+    })
     
     if (response.getResponseCode() === 200) {
       var json = response.getContentText()
@@ -26,5 +26,5 @@ function extractDomainsWithRateLimit() {
     if (i < companyNames.length - 1) {
       Utilities.sleep(millisecondsPerRequest)
     }
-  }
+}
 }
