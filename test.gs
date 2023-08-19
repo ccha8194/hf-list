@@ -1,5 +1,5 @@
 // Used on inputs which emails not found by the hunter api
-const CLEARBIT_API_KEY = 'sk_0a505e9c4b1e49d5b945c296cb403704';
+const CLEARBIT_API_KEY = ''; // the clearbit api key goes here
 
 function generateLeadEmails() {
   const sheet = SpreadsheetApp.getActiveSheet()
