@@ -1,4 +1,4 @@
-// Used on inputs which emails not found by the hunter api
+// Used on inputs that emails not found by the hunter api
 const CLEARBIT_API_KEY = ''; // the clearbit api key goes here
 
 function generateLeadEmails() {
